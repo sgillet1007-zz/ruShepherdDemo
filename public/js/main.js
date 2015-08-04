@@ -2,12 +2,13 @@
 
 var tour = new Shepherd.Tour({
   defaults: {
-    classes: 'shepherd-theme-arrows',
+    classes: 'shepherd-theme-square-dark',
     scrollTo: true
   }
 });
 
 tour.addStep('example-step', {
+  title: 'This is the Title!',
   text: 'Click here to submit your own beautiful Walmart personality.',
   attachTo: '#addButton',
   // classes: 'example-step-extra-class',

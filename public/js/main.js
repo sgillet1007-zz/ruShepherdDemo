@@ -8,8 +8,8 @@ var tour = new Shepherd.Tour({
 });
 
 tour.addStep('example-step', {
-  title: 'This is the Title!',
-  text: 'Click here to submit your own beautiful Walmart personality.',
+  title: 'Follow along as we explain the features of this website',
+  text: 'Click here to submit your own photo.',
   attachTo: '#addButton',
   // classes: 'example-step-extra-class',
   buttons: [
@@ -21,7 +21,7 @@ tour.addStep('example-step', {
 });
 
 tour.addStep('example-step', {
-  text: 'Barney Lady - A horrifying example of government-funded gene splicing.',
+  text: 'Here is a photo of a shopper.  What caption would you add?',
   attachTo: '#first-image left',
   // classes: 'example-step-extra-class',
   buttons: [
@@ -33,9 +33,9 @@ tour.addStep('example-step', {
 });
 
 tour.addStep('example-step', {
-  text: 'Big Mama - This step is attached to the bottom of THIS disturbing element.',
-  attachTo: '#second-image bottom',
-  // classes: 'example-step-extra-class',
+  text: 'Click on the button below the image to add YOUR caption',
+  attachTo: '#captionButton1',
+  // classes: 'example-step-extra-cass',
   buttons: [
     {
       text: 'Next',

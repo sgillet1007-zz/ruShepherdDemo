@@ -1,0 +1,312 @@
+REST 8/6/15
+
+Representational State Transfer
+
+a software architecture style for creating an interface on your se3rver for clients to send requests and get responses
+
+How to organize and name routes
+
+Rest is a strategy for organizing routes
+
+Not a specific tool, technology, library,  or protocal.  It is a technique, like Ajax.
+
+Rest is an architectual style all about naming routes and what clients can expect based on the names
+
+You would expect the following from a rest api.  Like art, you can't say if it is rest or not by pointing out certain things
+
+It is a spectrum of more and less restful
+
+Rest apis are stateless
+on every req you send, what describes what you want to get back has to be in the one req
+
+server will not remember you from previous contexts/contacts
+
+must include everything in each req which the server considers every  req to be original
+
+The responses from a rest api are typically json data.  Not all return json data
+
+If asked say rest apis return JSON data
+
+Most important
+
+How it uses the different http verbs
+
+get, put, delete, post
+
+These are NOT about database operations, they have to do with a different concept called
+
+Idempotency   The most important factor in choosing which http verb to use
+
+if doing an action once has the same effect as doing an action multi times, it is idempotent.  
+
+
+GET  reqs are supposed to be idempotent.  shouldn't modify the server state/no effect.
+these reqs are also safe, as in a safe http req sending it onece has the same effect of not sending it at all
+Typically used for retreiving data.
+
+
+
+PUT reqs are also idempotent.  Thpically used for updating a resource that is already in your database.  A way to specify changes to me made about an item in the database/set a property on an item
+
+If you send multi times you are just setting the same propoerty to the same value over and over.  If you send duplicate put requests, no problem.  Multi times sent is same as sending it only once, so no unintended adverse affects
+
+DELETE
+Ver similar to put and also idempotent.  Thypically used for deleting a resource from the database
+
+
+For put, delete, and somethinmes get reqs you specify a unique identifieer that says which selection you want to modify/specifies a specific resource
+
+
+
+
+POST
+these reqs are neither safe or idempotent.  every time you send one you expect it to modify teh server state in some way (ex.  submit a form)
+
+make sure you don't send duplicate post requests!!!!  You will be changing/updating
+the database.  
+
+Typically used for createing resources but can somethimes be used for updating.
+
+ex.  if you have a post request to USERS / and don't speicify a specific user, you will create multiple identical users in your database
+
+The body specifies details about the new user, but not a unique id.  Duplicate requests create duplicate identical database entries.  
+
+
+Diffictult to map post onto CRUD because post is confusing.  
+
+Deciding to use Post vs. Put?  ask if you send request 2 more times does it have the same affect on servere as if I'd only sent it once?  
+
+It is not about whether or not you are updating, it is about whether or not the action is idempoprtent.  
+
+Can you use restuful apis for customer transactions?  
+
+you have to send one request saying You know me?  and 
+
+then you have to send req asking for what you want
+
+You need to authenticate on teh server but this is not exactly restful
+
+But you need authentication, so don't worry about being perferctly restful.  There are trqde
+
+Benefit of restful apis-- other developers can read your docs and understand how it works
+
+There are a couple dozen http verbs/request types but we will mostly just use these four.  
+
+Another helpful tip in builidng restful api:  in the URL itself put nouns, not verbs
+
+"nouns not verbs"
+what you're doing with thge resource should be in the req body
+
+
+the noun/resource you are acting on is in the URL
+
+sometimes the req body in a PUT or POST reqeust will have more verbs.
+
+The URL is the resource, the thing you are working on.  Usually it is a document in a database but it doesn't have to be. 
+
+any req type that is not GET can have a body but sometimes it is not needed  ex.  delete doesn't usually need a body but could have one
+
+rest makes more sense in some circumstances than in others...
+
+When to use...
+
+to make resources available to clients, which means it is appropriate in a lot of situations.
+
+Resources can be known about and/or manipulated by the user
+
+NOt all the http verbas make sense for every resource.  ex, you can't delete days from a calendar
+
+A case study of NOT using restful principals
+
+REPORT is  safe and idempotent method to send to a server and shouldn't affect the server state.
+
+Report reqs have a body, unlike GET requests.  
+
+but programmers and users have trouble with REPORT requests and jquery doesn't use report requests
+
+REST is a plan for a style of routing, not a program or platform'
+
+RFC is a "reqeust for comments" and most authoritive information out there.  
+ggogle, for example,
+
+rfc http   this will give ou the most set-in-stone information about methods
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

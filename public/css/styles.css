@@ -18,3 +18,9 @@ body {
   margin: auto;
   margin-top: 20px;
 }
+
+#addButton {
+	display: block;
+	background-color: green;
+	margin-bottom: 50px;
+}

@@ -12,7 +12,7 @@ var tour = new Shepherd.Tour({
 tour.addStep('example-step', {
   title: 'Follow along as we explain the features of this website',
   text: 'Here is a photo of a shopper.  What caption would you add?',
-  attachTo: '#first-image left',
+  attachTo: '#first-image right',
   // classes: 'example-step-extra-class',
   buttons: [
     {
